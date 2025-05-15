@@ -74,3 +74,27 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.icon-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-list li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+
+.icon-list li a:hover {
+  color: #0072b1; /* LinkedIn blue or any highlight */
+}
+
+.icon {
+  vertical-align: middle;
+}
+
