@@ -1,4 +1,3 @@
-import './App.css'
 import { Hero, Links, Experience, Projects, Contact } from './Components'
 
 function App() {

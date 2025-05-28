@@ -3,7 +3,6 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 const Links = () => {
     return (
         <section className="links">
-            <h1>Links</h1>
             <ul className="icon-list">
                 <li>
                     <a

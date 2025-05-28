@@ -1,21 +1,21 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
   line-height: 1.5;
-  font-weight: 400;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-color: #ff5733;   
-  --secondary-color: #4CAF50; 
-  --background-color: #0D1321; 
-  --text-color: #F0EBD8;         
-  --muted-text-color: #888;   
-  --link-color: #1e90ff;     
-  --error-color: #e74c3c;     
-  --border-color: #ccc;       
+  --primary-color: #;   
+  --secondary-color: #; 
+  --background-color: #19181A; 
+  --text-color: #F0EBD8;  
+  --text-color-hover: #479761;       
+  --muted-text-color: #;   
+  --link-color: #;     
+  --error-color: #;     
+  --border-color: #;       
 }
 
 a {
@@ -29,17 +29,17 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 
   background-color: var(--background-color); 
   color: var(--text-color);
+    overflow-x: hidden; /* Add this line */
+
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 7em;
   line-height: 1.1;
 }
 
@@ -62,39 +62,92 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 .icon-list {
   list-style: none;
   display: flex;
   gap: 20px;
   padding: 0;
   margin: 0;
+  justify-content: center; /* Add this line */
 }
 
 .icon-list li a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   font-size: 2rem;
   transition: color 0.3s;
 }
 
 .icon-list li a:hover {
-  color: #0072b1; /* LinkedIn blue or any highlight */
+  
+  color: var(--text-color-hover);
 }
 
 .icon {
   vertical-align: middle;
+  font-size: 3rem;
 }
 
+.hero {
+  min-height: 200px; /* Adjust as needed for your hero content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  position: relative;
+  margin: 2em 0;
+  padding-left: 2em;
+  list-style: none;
+  border-left: 2px solid #748cab;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5em;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.1em;
+  top: 0.3em;
+  width: 1em;
+  height: 1em;
+  background: #479761;
+  border-radius: 50%;
+  border: 2px solid #19181A;
+  box-shadow: 0 0 0 2px #748cab;
+}
+
+.timeline-content {
+  padding-left: 1.5em;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.timeline-period {
+  font-size: 0.95em;
+  color: #b7c9e2;
+  margin-bottom: 0.3em;
+}
+
+.timeline-desc {
+  font-size: 1em;
+  color: #b7c9e2;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 1em;
+  }
+  .timeline-content {
+    padding-left: 1em;
+  }
+}
