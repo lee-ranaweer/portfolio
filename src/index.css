@@ -89,15 +89,19 @@ button:focus-visible {
 }
 
 .hero {
-  min-height: 200px; /* Adjust as needed for your hero content */
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
   align-items: center;
   justify-content: center;
 }
 
+.hero h1 {
+  font-size: 8vw; /* Responsive, scales with screen width */
+  line-height: 1.05;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
 .timeline {
-  position: relative;
   margin: 2em 0;
   padding-left: 2em;
   list-style: none;
