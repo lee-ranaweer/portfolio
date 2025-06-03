@@ -22,7 +22,6 @@ function App() {
   return (
     <div ref={scrollRef} data-scroll-container>
       <Hero />
-      <Links />
       <Experience />
       <Projects />
       <Contact />

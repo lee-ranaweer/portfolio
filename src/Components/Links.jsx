@@ -26,7 +26,7 @@ const Links = () => {
                     </a>
                 </li>
                 
-                <li>
+                {/* <li>
                     <a
                         href="mailto:nranawee@uoguelph.ca"
                         aria-label="Email"
@@ -35,7 +35,9 @@ const Links = () => {
                         >
                         <FaEnvelope className="icon" />
                     </a>
-                </li>
+                </li> */}
+
+                
             </ul>
         </section>
     );

@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import Links from "./Links"; 
 
 const name = "Hi, I'm Nelith";
 const subtitle = "I like building things that work—and work well. Mostly fullstack apps";
@@ -31,6 +32,19 @@ const Hero = () => {
         ease: "power3.out"
       }
     );
+
+    gsap.fromTo(
+    ".icon", // Target all elements with class 'icon'
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      delay: 1.5, // Start after hero text
+      stagger: 0.15,
+      ease: "power3.out"
+    }
+  );
   }, []);
 
   return (
@@ -58,6 +72,7 @@ const Hero = () => {
       >
         {subtitle}
       </p>
+      <Links /> {/* Add Links here */}
     </section>
   );
 };
