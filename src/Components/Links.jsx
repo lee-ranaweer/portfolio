@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const Links = () => {
     return (
@@ -25,15 +26,15 @@ const Links = () => {
                         <FaLinkedin className="icon" />
                     </a>
                 </li>
-                
-                {/* <li>
+{/*                 
+                <li>
                     <a
                         href="mailto:nranawee@uoguelph.ca"
                         aria-label="Email"
                         target="_blank"
                         rel="noopener noreferrer"
                         >
-                        <FaEnvelope className="icon" />
+                        <MdEmail className="icon" />
                     </a>
                 </li> */}
 

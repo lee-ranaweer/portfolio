@@ -1,3 +1,9 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const experiences = [
   {
     title: "Undergraduate Research Assistant",
@@ -13,34 +19,62 @@ const experiences = [
   },
 ];
 
-const minYear = Math.min(...experiences.map(e => e.start));
-const maxYear = Math.max(...experiences.map(e => e.end));
-const totalYears = maxYear - minYear;
+const Experience = () => {
+  const sectionRef = useRef(null);
 
-const Experience = () => (
-  <section className="experience">
-    <h1>Experience</h1>
-    <ul className="timeline">
-      {experiences.map((exp, idx) => {
-        const duration = exp.end - exp.start;
-        // Proportional height: min 60px, max 180px
-        const height = 60 + ((duration / totalYears) * 120);
-        return (
-          <li
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".timeline-entry", {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+
+      gsap.from(".experience h1", {
+        opacity: 0,
+        y: -30,
+        duration: 0.6,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 90%",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section className="experience" ref={sectionRef}>
+      <h1>Experience</h1>
+      <div className="timeline-container">
+        <div className="timeline-line" />
+        {experiences.map((exp, idx) => (
+          <div
             key={idx}
-            className={`timeline-item ${idx % 2 === 0 ? "left" : "right"}`}
-            style={{ minHeight: `${height}px` }}
+            className={`timeline-entry ${idx % 2 === 0 ? "left" : "right"}`}
           >
-            <div className="timeline-marker" />
             <div className="timeline-content">
-              <div className="timeline-title">{exp.title}</div>
-              <div className="timeline-period">{exp.start} – {exp.end}</div>
-              <div className="timeline-desc">{exp.description}</div>
+              <div className="timeline-year">
+                {exp.start} {exp.end !== exp.start && `– ${exp.end}`}
+              </div>
+              <div className="timeline-box">
+                <div className="timeline-title">{exp.title}</div>
+                <div className="timeline-desc">{exp.description}</div>
+              </div>
             </div>
-          </li>
-        );
-      })}
-    </ul>
-  </section>
-);
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 export default Experience;

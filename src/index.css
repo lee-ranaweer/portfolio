@@ -103,49 +103,81 @@ button:focus-visible {
   font-weight: 700;
 }
 
-.timeline {
-  margin: 2em 0;
-  padding-left: 2em;
-  list-style: none;
-  border-left: 2px solid #748cab;
+.experience h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
-.timeline-item {
+.timeline-container {
   position: relative;
-  margin-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.timeline-marker {
+.timeline-line {
   position: absolute;
-  left: -1.1em;
-  top: 0.3em;
-  width: 1em;
-  height: 1em;
-  background: #479761;
-  border-radius: 50%;
-  border: 2px solid #19181A;
-  box-shadow: 0 0 0 2px #748cab;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #748cab;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-entry {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.timeline-entry.left {
+  flex-direction: row-reverse;
+}
+
+.timeline-entry.right {
+  flex-direction: row;
 }
 
 .timeline-content {
-  padding-left: 1.5em;
+  width: 45%;
+  z-index: 2;
 }
 
-.timeline-title {
-  font-weight: 600;
-  font-size: 1.2em;
-  color: var(--text-color);
-}
-
-.timeline-period {
-  font-size: 0.95em;
+.timeline-year {
+  font-size: 1rem;
   color: #b7c9e2;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-.timeline-desc {
-  font-size: 1em;
-  color: #b7c9e2;
+.timeline-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #748cab33;
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .timeline-entry {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .timeline-content {
+    width: 90%;
+  }
+
+  .timeline-line {
+    left: 50%;
+  }
 }
 
 /* Responsive for mobile */
@@ -157,3 +189,39 @@ button:focus-visible {
     padding-left: 1em;
   }
 }
+
+.animated-bg {
+  position: 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.8;
+
+  --angle: 135deg;
+  --color1: #19181A;
+  --color2: #2C2B30;
+  --color3: #3E7C6A;
+  --color4: #8FA3B0;
+
+  background: linear-gradient(
+    var(--angle),
+    var(--color1),
+    var(--color2),
+    var(--color3),
+    var(--color4)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  will-change: background-position;
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+

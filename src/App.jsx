@@ -1,26 +1,31 @@
 import { useEffect, useRef } from 'react';
-import { Hero, Links, Experience, Projects, Contact } from './Components'
-import LocomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+import { Hero, Links, Experience, Projects, Contact, AnimatedBackground } from './Components'
+import Lenis from 'lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function App() {
-  const scrollRef = useRef(null);
 
-  // Locomotive Scroll Setup
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.05,
+    // Initialize a new Lenis instance for smooth scrolling
+    const lenis = new Lenis();
+
+    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
     });
 
-    return () => {
-      scroll.destroy();
-    };
-  }, []);
-
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+   }, []);
+  
   return (
-    <div ref={scrollRef} data-scroll-container>
+    <div >
+      <AnimatedBackground />
       <Hero />
       <Experience />
       <Projects />
