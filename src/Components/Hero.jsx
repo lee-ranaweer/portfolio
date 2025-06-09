@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import Links from "./Links"; 
+import Resume from "./Resume";
 
-const name = "Hi, I'm Nelith";
+const name = "Nelith Ranaweera";
 const subtitle = "I like building things that work—and work well. Mostly fullstack apps";
 
 const Hero = () => {
@@ -51,13 +52,6 @@ const Hero = () => {
     <section className="hero" style={{ textAlign: "center" }}>
       <h1
         ref={h1Ref}
-        style={{
-          display: "inline-block",
-          fontWeight: 700,
-          letterSpacing: "0.01em",
-          marginBottom: "0.5em",
-          color: "#F0EBD8"
-        }}
       >
         {name}
       </h1>
@@ -72,7 +66,8 @@ const Hero = () => {
       >
         {subtitle}
       </p>
-      <Links /> {/* Add Links here */}
+      <Links />
+      <Resume /> 
     </section>
   );
 };
