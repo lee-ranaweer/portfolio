@@ -231,27 +231,48 @@ line-height: 1.1;
 }
 
 .resume-download {
-  margin-top: 2em;
+  margin-top: 8vh;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 2s;
 }
 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .resume-btn {
-  display: inline-block;
-  padding: 0.8em 2em;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #f0ebd8;
-  background: #3e5c76;
-  border: none;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+
+  padding: clamp(0.8em, 2vw, 1.2em) clamp(1.5em, 4vw, 2.5em);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 500;
+  font-family: inherit;
+
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(116, 140, 171, 0.4);
+  border-radius: 12px;
+
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  /* box-shadow: 0 4px 20px rgba(0,0,0,0.1); */
+  backdrop-filter: blur(4px);
 }
 
 .resume-btn:hover,
 .resume-btn:focus {
-  background: #748cab;
-  color: #19181a;
+  background: rgba(71, 151, 97, 0.2);
+  border-color: var(--text-color-hover);
+  color: var(--text-color-hover);
 }
+

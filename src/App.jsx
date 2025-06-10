@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Hero, Links, Experience, Projects, Contact, AnimatedBackground } from './Components'
+import { Hero, Links, Experience, Projects, Contact, AnimatedBackground, OrbBackground } from './Components'
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,6 +26,8 @@ function App() {
   return (
     <div >
       <AnimatedBackground />
+      <OrbBackground />
+
       <Hero />
       <Experience />
       <Projects />

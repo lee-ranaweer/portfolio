@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 const Links = () => {
@@ -26,17 +26,17 @@ const Links = () => {
                         <FaLinkedin className="icon" />
                     </a>
                 </li>
-{/*                 
+                
                 <li>
                     <a
-                        href="mailto:nranawee@uoguelph.ca"
-                        aria-label="Email"
+                        href="https://www.instagram.com/6ways_fromsunday?igsh=OGkzNWIxdG5vbDdh"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >
-                        <MdEmail className="icon" />
+                        aria-label="Instagram"
+                    >
+                        <FaInstagram className="icon" />
                     </a>
-                </li> */}
+                </li>
 
                 
             </ul>
