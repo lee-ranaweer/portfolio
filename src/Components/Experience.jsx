@@ -15,7 +15,7 @@ const experiences = [
     title: "Undergraduate Teaching Assistant",
     start: 2024,
     end: 2025,
-    description: "Assisted in teaching programming courses...."
+    description: "Providing academic support and clarifying course material for students through email and office hours.• Grading course deliverables, ensuring consistent and fair application of grading rubrics. • Leading lab sessions to provide hands-on guidance, reinforcing key concepts taught in lectures."
   },
 ];
 

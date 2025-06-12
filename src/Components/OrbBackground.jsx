@@ -1,8 +1,12 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import gsap from "gsap";
 
 const OrbBackground = () => {
   const mountRef = useRef();
+  const sphereRef = useRef();
+  const ringsRef = useRef();
+
 
   useEffect(() => {
 
@@ -33,6 +37,7 @@ const OrbBackground = () => {
 
     });
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphereRef.current = sphere;
     scene.add(sphere);
 
         const scrollY = window.scrollY || window.pageYOffset;
@@ -41,6 +46,7 @@ sphere.rotation.y += scrollY * 0.00005;
 
     // Group to hold ring of rings
     const ringsGroup = new THREE.Group();
+    ringsRef.current = ringsGroup;
     scene.add(ringsGroup);
 
     const ringCount = 25; // Number of small rings
@@ -121,6 +127,29 @@ ringsGroup.rotateOnWorldAxis(tiltAxis, deltaY * rotationSpeed);
   renderer.render(scene, camera);
 };
 
+  gsap.fromTo(
+  [sphereRef.current.scale, ringsRef.current.scale],
+  { x: 0.8, y: 0.8, z: 0.8 },
+  {
+    x: 1,
+    y: 1,
+    z: 1,
+    duration: 2,
+    ease: "power2.out",
+    stagger: 0.2
+  }
+);
+
+gsap.fromTo(
+  [sphereMaterial, smallRingMaterial],
+  { opacity: 0 },
+  {
+    opacity: 0.2,
+    duration: 2,
+    ease: "power2.out",
+    stagger: 0.2
+  }
+);
 
 
     animate();
