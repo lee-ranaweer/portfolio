@@ -3,21 +3,33 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-
 const experiences = [
   {
     title: "Undergraduate Research Assistant",
+    employer: "University of Guelph – SVI Lab",
     start: 2025,
     end: "Present",
-    description: "Worked on research projects involving..."
+    description: [
+      "Documented, developed, and maintained a Node.js application for assessing human color differentiation in controlled experiments",
+      "Built and consumed REST APIs to handle experiment configuration, data collection, and results storage in a SQLite database",
+      "Contributed in weekly lab meetings and code reviews, aligning development efforts with broader research objectives and experimental protocols.",
+      "Collaborated with Ph.D. students to iterate on experimental tools, improving usability and reliability across multiple research projects.",
+    ],
   },
   {
     title: "Undergraduate Teaching Assistant",
+    employer: "University of Guelph – CS Department",
     start: 2024,
     end: 2025,
-    description: "Providing academic support and clarifying course material for students through email and office hours.• Grading course deliverables, ensuring consistent and fair application of grading rubrics. • Leading lab sessions to provide hands-on guidance, reinforcing key concepts taught in lectures."
+    description: [
+      "Providing academic support and clarifying course material for students through email and office hours.",
+      "Grading course deliverables, ensuring consistent and fair application of grading rubrics.",
+      "Leading lab sessions to provide hands-on guidance, reinforcing key concepts taught in lectures.",
+    ],
   },
 ];
+
+
 
 const Experience = () => {
   const sectionRef = useRef(null);
@@ -65,10 +77,16 @@ const Experience = () => {
               <div className="timeline-year">
                 {exp.start} {exp.end !== exp.start && `– ${exp.end}`}
               </div>
-              <div className="timeline-box">
-                <div className="timeline-title">{exp.title}</div>
-                <div className="timeline-desc">{exp.description}</div>
-              </div>
+<div className="timeline-box">
+  <div className="timeline-title">{exp.title}</div>
+  <div className="timeline-employer">{exp.employer}</div>
+  <ul className="timeline-desc">
+    {exp.description.map((point, i) => (
+      <li key={i}>{point}</li>
+    ))}
+  </ul>
+</div>
+
             </div>
           </div>
         ))}

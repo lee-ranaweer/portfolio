@@ -27,7 +27,6 @@ function App() {
     <div >
       <AnimatedBackground />
       <OrbBackground />
-
       <Hero />
       <Experience />
       <Projects />
