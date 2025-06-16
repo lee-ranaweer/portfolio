@@ -15,10 +15,11 @@ const AnimatedBackground = () => {
 
     // Animate color stops in a smooth loop
     gsap.to(bgRef.current, {
-      "--color1": "#19181A",
-      "--color2": "#2C2B30",
-      "--color3": "#3E7C6A",
-      "--color4": "#8FA3B0",
+  "--color1": "#181A20",
+  "--color2": "#2E3544",
+  "--color3": "#4A6583",
+  "--color4": "#8FA3B0",
+
       duration: 15,
       repeat: -1,
       yoyo: true,

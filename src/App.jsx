@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { Hero, Links, Experience, Projects, Contact, AnimatedBackground, OrbBackground } from './Components'
+import { useEffect } from 'react';
+import { Hero, Experience, Projects, Contact, AnimatedBackground, OrbBackground, NavBar } from './Components'
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 function App() {
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    
     // Initialize a new Lenis instance for smooth scrolling
     const lenis = new Lenis();
 
@@ -27,6 +29,7 @@ function App() {
     <div >
       <AnimatedBackground />
       <OrbBackground />
+      {/* <NavBar /> */}
       <Hero />
       <Experience />
       <Projects />

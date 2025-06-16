@@ -39,8 +39,8 @@ const Experience = () => {
       gsap.from(".timeline-entry", {
         opacity: 0,
         y: 50,
-        duration: 0.8,
-        stagger: 0.2,
+        duration: 1.5,
+        stagger: 0.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -51,7 +51,7 @@ const Experience = () => {
       gsap.from(".experience h1", {
         opacity: 0,
         y: -30,
-        duration: 0.6,
+        duration: 1.5,
         ease: "power1.out",
         scrollTrigger: {
           trigger: sectionRef.current,

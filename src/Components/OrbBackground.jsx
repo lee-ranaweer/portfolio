@@ -20,7 +20,7 @@ const OrbBackground = () => {
       0.1,
       1000
     );
-    camera.position.z = 3;
+    camera.position.z = 2.9;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(mount.clientWidth, mount.clientHeight);
