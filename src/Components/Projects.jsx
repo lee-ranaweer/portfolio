@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaGithub, FaReact, FaCss3Alt, FaNodeJs, FaUnity, FaGoogle, FaFire } from "react-icons/fa";
-import { SiFlutter, SiDart, SiFirebase, SiVite, SiTypescript, SiJavascript, SiSqlite, SiExpress } from "react-icons/si";
+import { SiDocker, SiFlutter, SiDart, SiFirebase, SiVite, SiExpress, SiJavascript, SiTypescript, SiSqlite, SiSpring, SiMysql, SiPython, SiC, SiBlender, SiScikitlearn, SiAwsamplify } from "react-icons/si";
+import { FaGithub, FaFire, FaGoogle, FaUnity, FaReact, FaCss3Alt, FaNodeJs, FaJava, FaHtml5, FaAndroid, FaApple 
+ } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Icons
 const techIcons = {
   Flutter: <SiFlutter />,
   Dart: <SiDart />,
@@ -14,47 +16,58 @@ const techIcons = {
   API: <FaGoogle />,
   REST: <FaGoogle />,
   Unity: <FaUnity />,
-  "C#": <span>C#</span>,
+  C: <SiC />,
+  Python: <SiPython />,
+  Java: <FaJava />,
   React: <FaReact />,
+  HTML: <FaHtml5 />,
   CSS: <FaCss3Alt />,
   Vite: <SiVite />,
   NodeJS: <FaNodeJs />,
   Express: <SiExpress />,
   JavaScript: <SiJavascript />,
   TypeScript: <SiTypescript />,
-  SQLite: <SiSqlite />
+  SQLite: <SiSqlite />,
+  Springboot: <SiSpring />,
+  MySQL: <SiMysql />,
+  Blender: <SiBlender />,
+  "Scikit learn": <SiScikitlearn />,
+  AWS: <SiAwsamplify />,
+Docker: <SiDocker />,
+  Android: <FaAndroid />,
+  iOS: <FaApple />,
 };
 
 const projects = [
   {
     name: "Holo",
-    description: "Cross-platform mobile app for managing Pokémon TCG collections with real-time data sync and market pricing.",
-    tech: ["Flutter", "Dart", "Firebase", "Firestore", "Pokemon TCG API", "REST", "Android", "iOS"],
+    description: "A cross-platform mobile app for managing your personal Pokémon TCG collection. It uses the Pokémon TCG API to deliver real-time market prices, card rarities, and set details. Features include custom deck building, wishlists, advanced filtering, and portfolio value tracking.",
+    tech: ["Flutter", "Dart", "Firebase", "Firestore", "Android", "iOS", "Pokemon TCG API"],
     github: "https://github.com/lee-ranaweer/holo"
   },
   {
     name: "GeoJobSearch",
-    description: "A web application designed to assist users job search by aggregating information from various online job boards into one comprehensive, efficient, and easy-to-navigate application.",
-    tech: ["Unity", "C#"],
+    description: "A fullstack app that streamlines your job search by aggregating listings from multiple online job boards into one user-friendly platform. Features include advanced searching and filtering, as well as Google Maps integration to view job postings relative to your location.",
+    tech: ["Docker", "Springboot", "MySQL", "Python", "Java", "React", "HTML", "CSS", "JavaScript", "Google Maps API"],
     github: "https://github.com/lee-ranaweer/geo-job-search"
   },
   {
     name: "Molecule Visualizer",
-    description: "Modern, animated dev portfolio featuring smooth scroll, reusable components, and GSAP animations.",
-    tech: ["React", "CSS", "Vite"],
+    description: "A fullstack app that converts SDF files of molecular structures into interactive 3D models using a custom-built library. You can upload files to visualize molecules directly in the web browser. Uploaded molecules are saved in a local database for easy management",
+    tech: ["C", "Python", "SQLite", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/lee-ranaweer/molecule-visualizer"
   },
   {
     name: "Battlesnake Machine Learning",
-    description: "ML agent for competitive Battlesnake game play.",
-    tech: ["React", "CSS", "Vite"],
-    github: "https://github.com/yourusername/portfolio"
+    description: "A machine learning project that replicates the behavior of a top-performing Battlesnake by training models such as SVMs, Decision Trees, and Neural Networks on gameplay data. The goal was to compare these training methods in mimicking strategic decision-making. The final model achieved a 90% accuracy in replicating the original models behaviour.",
+    tech: ["Python", "Scikit learn", "AWS"],
+    github: "https://github.com/lee-ranaweer/battlesnake-machine-learning"
   },
   {
     name: "Slashimi",
-    description: "A Unity fishing game demo with slashing mechanics, inspired by Metal Gear Solid.",
-    tech: ["React", "CSS", "Vite"],
-    github: "https://github.com/yourusername/portfolio"
+    description: "A Unity fishing game demo featuring slashing mechanics inspired by Metal Gear Solid. Players explore a custom island with scenic fishing spots and a variety of fish differing in value, rarity, and difficulty. After catching a fish, players can slash it to collect. This demo currently includes small missions and is planned for future expansion.",
+    tech: ["Unity", "C#", "Blender"],
+    github: "https://github.com/lee-ranaweer/slashimi"
   }
 ];
 

@@ -4,7 +4,7 @@ import Links from "./Links";
 import Resume from "./Resume";
 
 const name = "Nelith Ranaweera";
-const subtitle = "I like building things that work—and work well. Mostly fullstack apps";
+const subtitle = "I like building things that work—and work well. Currently working in research at the University of Guelph, developing software to help test the limits of human colour vision";
 
 const Hero = () => {
   const h1Ref = useRef(null);

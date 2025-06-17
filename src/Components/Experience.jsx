@@ -7,7 +7,7 @@ const experiences = [
   {
     title: "Undergraduate Research Assistant",
     employer: "University of Guelph – SVI Lab",
-    start: 2025,
+    start: "May 2025",
     end: "Present",
     description: [
       "Documented, developed, and maintained a Node.js application for assessing human color differentiation in controlled experiments",
@@ -19,8 +19,8 @@ const experiences = [
   {
     title: "Undergraduate Teaching Assistant",
     employer: "University of Guelph – CS Department",
-    start: 2024,
-    end: 2025,
+    start: "January 2024",
+    end: "May 2025",
     description: [
       "Providing academic support and clarifying course material for students through email and office hours.",
       "Grading course deliverables, ensuring consistent and fair application of grading rubrics.",

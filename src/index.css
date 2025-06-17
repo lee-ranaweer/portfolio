@@ -13,7 +13,8 @@
   --secondary-color: #; 
   --background-color: #19181A; 
   --text-color: #F0EBD8;  
-  --text-color-hover: #479761;       
+  --text-color-hover: #7FB7FF; /* soft cool blue for hover */
+     
   --muted-text-color: #;   
   --link-color: #;     
   --error-color: #;     
@@ -51,7 +52,7 @@ h1 {
 
 
 button {
-  /* border-radius: 8px; */
+  border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -159,7 +160,6 @@ line-height: 1.1;
 
 
 .timeline-year {
-  font-size: 1.5rem;
   color: #b7c9e2;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -168,20 +168,17 @@ line-height: 1.1;
 .timeline-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(116, 140, 171, 0.2);
-  /* border-radius: 16px; */
+  border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2.5rem);
   backdrop-filter: blur(3px);
-  font-size: 1.1rem;
 }
 
 .timeline-title {
-  font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .timeline-employer {
-  font-size: 0.95rem;
   color: var(--muted-text-color, #b7c9e2);
   font-style: italic;
   margin-bottom: 1rem;
@@ -278,14 +275,13 @@ line-height: 1.1;
   gap: 0.6em;
 
   padding: clamp(0.8em, 2vw, 1.2em) clamp(1.5em, 4vw, 2.5em);
-  font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 500;
   font-family: inherit;
 
   color: var(--text-color);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(116, 140, 171, 0.4);
-  /* border-radius: 12px; */
+  border-radius: 12px;
 
   text-decoration: none;
   /* transition: all 0.3s ease; */
@@ -295,7 +291,7 @@ line-height: 1.1;
 
 .resume-btn:hover,
 .resume-btn:focus {
-  background: rgba(71, 151, 97, 0.2);
+  background: rgba(127, 183, 255, 0.15);
   border-color: var(--text-color-hover);
   color: var(--text-color-hover);
 }
@@ -312,13 +308,6 @@ line-height: 1.1;
   font-weight: 700;
 }
 
-.contact-subtitle {
-  font-size: 1.5rem;
-  text-align: center;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  opacity: 0.85;
-}
 
 .contact-button-wrapper {
   display: flex;
@@ -338,7 +327,7 @@ line-height: 1.1;
   color: var(--text-color);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(116, 140, 171, 0.4);
-  /* border-radius: 12px; */
+  border-radius: 12px;
 
   text-decoration: none;
   transition: all 0.3s ease;
@@ -347,7 +336,8 @@ line-height: 1.1;
 
 .contact-email-link:hover,
 .contact-email-link:focus {
-  background: rgba(71, 151, 97, 0.2);
+    background: rgba(127, 183, 255, 0.15); /* lighter background with new hover color */
+
   border-color: var(--text-color-hover);
   color: var(--text-color-hover);
 }
@@ -408,23 +398,14 @@ line-height: 1.1;
 }
 
 .project-info h2 {
-  font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 0.1rem;
 }
 
 .project-desc {
-  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.project-bullets {
-  list-style: disc;
-  padding-left: 1.2rem;
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
 
 .tech-icons {
   display: flex;
@@ -464,7 +445,7 @@ body {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(116, 140, 171, 0.15);
   padding: 2rem;
-  /* border-radius: 1.5rem; */
+  border-radius: 1.5rem;
   backdrop-filter: blur(4px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0 transparent;
@@ -501,23 +482,34 @@ body {
   /* border-radius: 12px; */
 }
 
-.side-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
 
-.side-nav a {
-  font-size: 1.2rem;
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
 
 .side-nav a:hover {
   color: var(--text-color-hover);
+}
+
+a,
+button,
+.contact-email-link,
+.resume-btn {
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Experience & Project Titles */
+.timeline-title,
+.project-info h2 {
+  font-size: 1.8rem; /* or 20px */
+  font-weight: 500;
+}
+
+/* Employer (slightly smaller than title, but still prominent) */
+.timeline-employer {
+  font-size: 1.45rem; /* or 17.6px */
+}
+
+/* Experience bullets & Project descriptions */
+.timeline-desc li,
+.project-desc {
+  font-size: 1.2rem; /* or 16px */
+  line-height: 1.6;
 }
