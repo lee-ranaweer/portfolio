@@ -3,70 +3,37 @@
 :root {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.5;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --primary-color: #;   
-  --secondary-color: #; 
-  --background-color: #19181A; 
-  --text-color: #F0EBD8;  
-  --text-color-hover: #7FB7FF; /* soft cool blue for hover */
-     
-  --muted-text-color: #;   
-  --link-color: #;     
-  --error-color: #;     
-  --border-color: #;       
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --background-color: #19181A;
+  --text-color: #F0EBD8;
+  --text-color-hover: #7FB7FF;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-
-  background-color: var(--background-color); 
+  background-color: var(--background-color);
   color: var(--text-color);
-    overflow-x: hidden; /* Add this line */
+  overflow-x: hidden;
   font-size: 1.15rem;
-
 }
 
 h1 {
   text-align: center;
-  font-size: 7em;
+  font-size: 4vw;
   line-height: 1.1;
   margin-bottom: 2rem;
   font-weight: 400;
 }
 
+/* Links ---------------------------------------------------------------------------------------------- */
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.links {
+  margin-top: 5em;
 }
 
 .icon-list {
@@ -75,7 +42,7 @@ button:focus-visible {
   gap: 1.5vw;
   padding: 0;
   margin: 0;
-  justify-content: center; /* Add this line */
+  justify-content: center;
 }
 
 .icon-list li a {
@@ -89,32 +56,31 @@ button:focus-visible {
 }
 
 .icon {
-  vertical-align: middle;
-  font-size: 3vw; 
+  font-size: 3vw;
 }
+
+/* Hero ----------------------------------------------------------------------------------------------- */
 
 .hero {
   min-height: 100vh;
-  align-items: center;
   justify-content: center;
-}
-
-.hero .links {
-  margin-top: 5em;
+  text-align: center;
 }
 
 .hero h1 {
   font-size: 8vw;
-line-height: 1.1;
-
+  line-height: 1.1;
   margin-bottom: 0.5em;
 }
 
- h1 {
-  text-align: center;
-  font-size: 4vw;
-  margin-bottom: 2rem;
+.hero p {
+  color: #B7C9E2;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-top: 0.5em;
 }
+
+/* Experience ----------------------------------------------------------------------------------------- */
 
 .timeline-container {
   position: relative;
@@ -125,7 +91,6 @@ line-height: 1.1;
   max-width: 1300px;
   margin: 0 auto;
 }
-
 
 .timeline-line {
   position: absolute;
@@ -157,7 +122,6 @@ line-height: 1.1;
   width: 48%;
   z-index: 2;
 }
-
 
 .timeline-year {
   color: #b7c9e2;
@@ -207,18 +171,10 @@ line-height: 1.1;
   }
 }
 
-/* Responsive for mobile */
-@media (max-width: 600px) {
-  .timeline {
-    padding-left: 1em;
-  }
-  .timeline-content {
-    padding-left: 1em;
-  }
-}
+/* Animated Background -------------------------------------------------------------------------------- */
 
-.animated-bg {
-  position: fixed; /* Use fixed instead of absolute */
+.gradient {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -233,71 +189,61 @@ line-height: 1.1;
   --color3: #4A6583;
   --color4: #8FA3B0;
 
-  background: linear-gradient(
-    var(--angle),
-    var(--color1),
-    var(--color2),
-    var(--color3),
-    var(--color4)
-  );
+  background: linear-gradient(var(--angle),
+      var(--color1),
+      var(--color2),
+      var(--color3),
+      var(--color4));
   background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
   will-change: background-position;
 }
 
-
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.resume-download {
+/* Resume --------------------------------------------------------------------------------------------- */
+
+.resume {
   margin-top: 8vh;
   display: flex;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 2.1s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .resume-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
-
   padding: clamp(0.8em, 2vw, 1.2em) clamp(1.5em, 4vw, 2.5em);
   font-weight: 500;
-  font-family: inherit;
-
   color: var(--text-color);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(116, 140, 171, 0.4);
   border-radius: 12px;
-
   text-decoration: none;
-  /* transition: all 0.3s ease; */
-  /* box-shadow: 0 4px 20px rgba(0,0,0,0.1); */
   backdrop-filter: blur(4px);
 }
 
-.resume-btn:hover,
-.resume-btn:focus {
+.resume-btn:hover {
   background: rgba(127, 183, 255, 0.15);
   border-color: var(--text-color-hover);
   color: var(--text-color-hover);
 }
 
+/* Contact ------------------------------------------------------------------------------------------- */
+
 .contact-section {
-  padding-bottom: 10vh; /* Add this */
+  padding-bottom: 10vh;
 }
 
 .contact-title {
@@ -307,7 +253,6 @@ line-height: 1.1;
   color: var(--text-color);
   font-weight: 700;
 }
-
 
 .contact-button-wrapper {
   display: flex;
@@ -336,14 +281,16 @@ line-height: 1.1;
 
 .contact-email-link:hover,
 .contact-email-link:focus {
-    background: rgba(127, 183, 255, 0.15); /* lighter background with new hover color */
+  background: rgba(127, 183, 255, 0.15);
+  /* lighter background with new hover color */
 
   border-color: var(--text-color-hover);
   color: var(--text-color-hover);
 }
 
 .experience {
-  margin-top: -30vh; /* Pulls the experience section up */
+  margin-top: -30vh;
+  /* Pulls the experience section up */
 }
 
 .projects-section {
@@ -362,12 +309,14 @@ line-height: 1.1;
   gap: 2rem;
   align-items: center;
   margin-bottom: 3rem;
-  flex-wrap: wrap; /* for small screens */
+  flex-wrap: wrap;
+  /* for small screens */
 }
 
 
 .project-media {
-  flex: 1 1 60%; /* take about 60% width */
+  flex: 1 1 60%;
+  /* take about 60% width */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -375,9 +324,11 @@ line-height: 1.1;
 
 .project-media img {
   width: 100%;
-  max-width: none;  /* Remove max width to prevent shrinking */
+  max-width: none;
+  /* Remove max width to prevent shrinking */
   height: auto;
-  opacity: 0.5;  /* Slight transparency */
+  opacity: 0.5;
+  /* Slight transparency */
   border: none;
   outline: none;
   box-shadow: none;
@@ -391,7 +342,8 @@ line-height: 1.1;
 
 
 .project-info {
-  flex: 1 1 50%; /* Match .project-media */
+  flex: 1 1 50%;
+  /* Match .project-media */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -437,8 +389,10 @@ line-height: 1.1;
 
 /* Firefox */
 body {
-  scrollbar-width: none; /* hides scrollbar */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  /* hides scrollbar */
+  -ms-overflow-style: none;
+  /* IE and Edge */
 }
 
 .sleek-card {
@@ -450,6 +404,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0 transparent;
 }
+
 /* 
 .sleek-card:hover {
   transform: translateY(-5px);
@@ -498,18 +453,21 @@ button,
 /* Experience & Project Titles */
 .timeline-title,
 .project-info h2 {
-  font-size: 1.8rem; /* or 20px */
+  font-size: 1.8rem;
+  /* or 20px */
   font-weight: 500;
 }
 
 /* Employer (slightly smaller than title, but still prominent) */
 .timeline-employer {
-  font-size: 1.45rem; /* or 17.6px */
+  font-size: 1.45rem;
+  /* or 17.6px */
 }
 
 /* Experience bullets & Project descriptions */
 .timeline-desc li,
 .project-desc {
-  font-size: 1.2rem; /* or 16px */
+  font-size: 1.2rem;
+  /* or 16px */
   line-height: 1.6;
 }

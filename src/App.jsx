@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Hero, Experience, Projects, Contact, AnimatedBackground, OrbBackground, NavBar } from './Components'
+import { Hero, Experience, Projects, Contact, Gradient, Orb } from './Components'
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -27,9 +27,8 @@ function App() {
   
   return (
     <div >
-      <AnimatedBackground />
-      <OrbBackground />
-      {/* <NavBar /> */}
+      <Gradient />
+      <Orb />
       <Hero />
       <Experience />
       <Projects />

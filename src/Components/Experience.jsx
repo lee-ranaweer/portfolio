@@ -29,11 +29,10 @@ const experiences = [
   },
 ];
 
-
-
 const Experience = () => {
   const sectionRef = useRef(null);
 
+  // Timeline animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".timeline-entry", {
@@ -48,6 +47,7 @@ const Experience = () => {
         },
       });
 
+      // Header animation
       gsap.from(".experience h1", {
         opacity: 0,
         y: -30,
@@ -77,16 +77,15 @@ const Experience = () => {
               <div className="timeline-year">
                 {exp.start} {exp.end !== exp.start && `– ${exp.end}`}
               </div>
-<div className="timeline-box">
-  <div className="timeline-title">{exp.title}</div>
-  <div className="timeline-employer">{exp.employer}</div>
-  <ul className="timeline-desc">
-    {exp.description.map((point, i) => (
-      <li key={i}>{point}</li>
-    ))}
-  </ul>
-</div>
-
+              <div className="timeline-box">
+                <div className="timeline-title">{exp.title}</div>
+                <div className="timeline-employer">{exp.employer}</div>
+                <ul className="timeline-desc">
+                  {exp.description.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         ))}

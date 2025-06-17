@@ -2,40 +2,41 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SiDocker, SiFlutter, SiDart, SiFirebase, SiVite, SiExpress, SiJavascript, SiTypescript, SiSqlite, SiSpring, SiMysql, SiPython, SiC, SiBlender, SiScikitlearn, SiAwsamplify } from "react-icons/si";
-import { FaGithub, FaFire, FaGoogle, FaUnity, FaReact, FaCss3Alt, FaNodeJs, FaJava, FaHtml5, FaAndroid, FaApple 
- } from "react-icons/fa";
+import {
+  FaGithub, FaFire, FaGoogle, FaUnity, FaReact, FaCss3Alt, FaNodeJs, FaJava, FaHtml5, FaAndroid, FaApple
+} from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Icons
 const techIcons = {
-  Flutter: <SiFlutter />,
-  Dart: <SiDart />,
-  Firebase: <SiFirebase />,
-  Firestore: <FaFire />,
-  API: <FaGoogle />,
-  REST: <FaGoogle />,
-  Unity: <FaUnity />,
-  C: <SiC />,
-  Python: <SiPython />,
-  Java: <FaJava />,
-  React: <FaReact />,
-  HTML: <FaHtml5 />,
-  CSS: <FaCss3Alt />,
-  Vite: <SiVite />,
-  NodeJS: <FaNodeJs />,
-  Express: <SiExpress />,
-  JavaScript: <SiJavascript />,
-  TypeScript: <SiTypescript />,
-  SQLite: <SiSqlite />,
-  Springboot: <SiSpring />,
-  MySQL: <SiMysql />,
-  Blender: <SiBlender />,
+  "Flutter": <SiFlutter />,
+  "Dart": <SiDart />,
+  "Firebase": <SiFirebase />,
+  "Firestore": <FaFire />,
+  "API": <FaGoogle />,
+  "REST": <FaGoogle />,
+  "Unity": <FaUnity />,
+  "C": <SiC />,
+  "Python": <SiPython />,
+  "Java": <FaJava />,
+  "React": <FaReact />,
+  "HTML": <FaHtml5 />,
+  "CSS": <FaCss3Alt />,
+  "Vite": <SiVite />,
+  "NodeJS": <FaNodeJs />,
+  "Express": <SiExpress />,
+  "JavaScript": <SiJavascript />,
+  "TypeScript": <SiTypescript />,
+  "SQLite": <SiSqlite />,
+  "Springboot": <SiSpring />,
+  "MySQL": <SiMysql />,
+  "Blender": <SiBlender />,
   "Scikit learn": <SiScikitlearn />,
-  AWS: <SiAwsamplify />,
-Docker: <SiDocker />,
-  Android: <FaAndroid />,
-  iOS: <FaApple />,
+  "AWS": <SiAwsamplify />,
+  "Docker": <SiDocker />,
+  "Android": <FaAndroid />,
+  "iOS": <FaApple />,
 };
 
 const projects = [
@@ -75,39 +76,39 @@ const Projects = () => {
   const projectsGridRef = useRef(null);
 
   useEffect(() => {
-  const ctx = gsap.context(() => {
-    // Animate project cards individually as they scroll into view
-    gsap.utils.toArray(".project-card").forEach((card) => {
-      gsap.from(card, {
-opacity: 0,
-        y: 50,
+    const ctx = gsap.context(() => {
+      // Animate project cards individually as they scroll into view
+      gsap.utils.toArray(".project-card").forEach((card) => {
+        gsap.from(card, {
+          opacity: 0,
+          y: 50,
+          duration: 1.5,
+          stagger: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      // Header animation
+      gsap.from(".projects-section h1", {
+        opacity: 0,
+        y: -30,
         duration: 1.5,
-        stagger: 0.5,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
+          trigger: projectsGridRef.current,
+          start: "top 90%",
           toggleActions: "play none none none",
         },
       });
-    });
+    }, projectsGridRef);
 
-    // Animate the section title
-    gsap.from(".projects-section h1", {
-      opacity: 0,
-      y: -30,
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: projectsGridRef.current,
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-    });
-  }, projectsGridRef);
-
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="projects-section" ref={projectsGridRef}>

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
-import { FaEnvelope } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { FaEnvelope } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +23,7 @@ const Contact = () => {
         },
       });
 
-      // Email button animation, slightly delayed
+      // Email button animation
       gsap.from(".contact-email-link", {
         opacity: 0,
         y: 15,

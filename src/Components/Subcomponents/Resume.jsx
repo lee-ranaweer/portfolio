@@ -2,7 +2,7 @@ import { FaDownload } from 'react-icons/fa';
 
 const Resume = () => {
   return (
-    <div className="resume-download">
+    <div className="resume">
       <a
         href="/Nelith_Ranaweera_Resume.pdf"
         download
@@ -19,4 +19,3 @@ const Resume = () => {
 };
 
 export default Resume;
- 
