@@ -94,7 +94,7 @@ const Projects = () => {
       });
 
       // Header animation
-      gsap.from(".projects-section h1", {
+      gsap.from(".projects h1", {
         opacity: 0,
         y: -30,
         duration: 1.5,
@@ -111,11 +111,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="projects-section" ref={projectsGridRef}>
+    <section className="projects" ref={projectsGridRef}>
       <h1>Projects</h1>
       <div className="projects-grid" >
         {projects.map((proj, index) => (
-          <div key={index} className="project-card sleek-card">
+          <div key={index} className="project-card card">
             <div className="project-info">
               <h2>{proj.name}</h2>
               <p className="project-desc">{proj.description}</p>

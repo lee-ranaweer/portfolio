@@ -12,6 +12,17 @@
   --text-color-hover: #7FB7FF;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -81,6 +92,10 @@ h1 {
 }
 
 /* Experience ----------------------------------------------------------------------------------------- */
+
+.experience {
+  margin-top: -30vh;
+}
 
 .timeline-container {
   position: relative;
@@ -263,17 +278,14 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
-
   padding: clamp(0.8em, 2vw, 1.2em) clamp(1.5em, 4vw, 2.5em);
   font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 500;
   font-family: inherit;
-
   color: var(--text-color);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(116, 140, 171, 0.4);
   border-radius: 12px;
-
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
@@ -282,18 +294,13 @@ h1 {
 .contact-email-link:hover,
 .contact-email-link:focus {
   background: rgba(127, 183, 255, 0.15);
-  /* lighter background with new hover color */
-
   border-color: var(--text-color-hover);
   color: var(--text-color-hover);
 }
 
-.experience {
-  margin-top: -30vh;
-  /* Pulls the experience section up */
-}
+/* Projects ------------------------------------------------------------------------------------------ */
 
-.projects-section {
+.projects {
   padding: 6vh 4vw;
   max-width: 1300px;
   margin: 0 auto;
@@ -310,36 +317,7 @@ h1 {
   align-items: center;
   margin-bottom: 3rem;
   flex-wrap: wrap;
-  /* for small screens */
 }
-
-
-.project-media {
-  flex: 1 1 60%;
-  /* take about 60% width */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-media img {
-  width: 100%;
-  max-width: none;
-  /* Remove max width to prevent shrinking */
-  height: auto;
-  opacity: 0.5;
-  /* Slight transparency */
-  border: none;
-  outline: none;
-  box-shadow: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.project-media img:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
 
 .project-info {
   flex: 1 1 50%;
@@ -358,14 +336,12 @@ h1 {
   margin-bottom: 1rem;
 }
 
-
 .tech-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-
 
 .github-link {
   margin-top: auto;
@@ -378,24 +354,11 @@ h1 {
   transition: color 0.3s;
 }
 
-
 .github-link:hover {
   color: var(--text-color-hover);
 }
 
-:root::-webkit-scrollbar {
-  display: none;
-}
-
-/* Firefox */
-body {
-  scrollbar-width: none;
-  /* hides scrollbar */
-  -ms-overflow-style: none;
-  /* IE and Edge */
-}
-
-.sleek-card {
+.card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(116, 140, 171, 0.15);
   padding: 2rem;
@@ -404,12 +367,6 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0 transparent;
 }
-
-/* 
-.sleek-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(71, 151, 97, 0.2);
-} */
 
 .tech-tag {
   display: inline-flex;
@@ -421,26 +378,6 @@ body {
   border-radius: 8px;
   font-size: 0.95rem;
   color: var(--text-color);
-}
-
-.side-nav {
-  position: fixed;
-  top: 50%;
-  right: 2vw;
-  transform: translateY(-50%);
-  z-index: 10;
-
-  /* background: rgba(255, 255, 255, 0.03); */
-  /* backdrop-filter: blur(4px); */
-  /* border: 1px solid rgba(116, 140, 171, 0.2); */
-  padding: 1.5rem;
-  /* border-radius: 12px; */
-}
-
-
-
-.side-nav a:hover {
-  color: var(--text-color-hover);
 }
 
 a,
