@@ -12,7 +12,7 @@ const Contact = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Heading animation
-      gsap.from(".contact-section h1", {
+      gsap.from(".contact h1", {
         opacity: 0,
         y: -15,
         duration: 1,
@@ -41,7 +41,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="contact-section" ref={contactRef}>
+    <section className="contact" ref={contactRef}>
       <div className="contact-container">
         <h1>Let's Connect</h1>
         <div className="contact-button-wrapper">

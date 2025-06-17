@@ -43,6 +43,10 @@ h1 {
 
 /* Links ---------------------------------------------------------------------------------------------- */
 
+.icon {
+  font-size: max(2.5rem, 2.75vw);
+}
+
 .links {
   margin-top: 5em;
 }
@@ -50,7 +54,7 @@ h1 {
 .icon-list {
   list-style: none;
   display: flex;
-  gap: 1.5vw;
+  gap: clamp(1.5rem, 2vw, 2rem);
   padding: 0;
   margin: 0;
   justify-content: center;
@@ -66,20 +70,17 @@ h1 {
   color: var(--text-color-hover);
 }
 
-.icon {
-  font-size: 3vw;
-}
-
 /* Hero ----------------------------------------------------------------------------------------------- */
 
 .hero {
   min-height: 100vh;
   justify-content: center;
   text-align: center;
+  padding: 1rem;
 }
 
 .hero h1 {
-  font-size: 8vw;
+  font-size: max(2.5rem, 8vw);
   line-height: 1.1;
   margin-bottom: 0.5em;
 }
@@ -87,15 +88,11 @@ h1 {
 .hero p {
   color: #B7C9E2;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: max(0.75rem, 1vw);
   margin-top: 0.5em;
 }
 
 /* Experience ----------------------------------------------------------------------------------------- */
-
-.experience {
-  margin-top: -30vh;
-}
 
 .timeline-container {
   position: relative;
@@ -257,7 +254,7 @@ h1 {
 
 /* Contact ------------------------------------------------------------------------------------------- */
 
-.contact-section {
+.contact {
   padding-bottom: 10vh;
 }
 
@@ -408,3 +405,84 @@ button,
   /* or 16px */
   line-height: 1.6;
 }
+
+@media (max-width: 768px) {
+  .links {
+    margin-top: 1em; /* was 5em */
+  }
+
+  .resume {
+    margin-top: 2vh; /* was 8vh */
+  }
+
+  .hero p {
+    margin-bottom: 0.5em; /* optional, if needed for better spacing */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: -10vh;
+    margin-bottom: 10vh;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Experience & Project Titles */
+  .timeline-title,
+  .project-info h2 {
+    font-size: 1.25rem; /* was 1.8rem */
+  }
+
+  /* Employer text */
+  .timeline-employer {
+    font-size: 1rem; /* was 1.45rem */
+  }
+
+  /* Bullets & Descriptions */
+  .timeline-desc li,
+  .project-desc {
+    font-size: 0.8rem; /* was 1.2rem */
+    line-height: 1.5;
+  }
+
+  /* Optional: tighter spacing for project sections on mobile */
+  .project-card {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Adjusted for smaller screens */
+    margin-bottom: -2rem; /* reduced from 2rem */
+
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-btn {
+    padding: 0.6em 1.2em; /* smaller than clamp */
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    display: none;
+  }
+
+  .contact-button-wrapper {
+    margin-top: 3em;
+
+  }
+
+  .timeline-box {
+    margin-bottom:-1em;
+  }
+}
+
