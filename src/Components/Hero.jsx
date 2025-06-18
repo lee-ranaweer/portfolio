@@ -4,7 +4,7 @@ import Links from "./Subcomponents/Links";
 import Resume from "./Subcomponents/Resume";
 
 const name = "Nelith Ranaweera";
-const subtitle = "I like building things that work—and work well. Currently working at University of Guelph - SVI Lab, developing software to help test the limits of human colour vision";
+const subtitle = "I like building things that work—and work well. Currently working at the University of Guelph's SVI Lab, developing software to help test the limits of human colour vision";
 
 const Hero = () => {
   const h1Ref = useRef(null);

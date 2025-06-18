@@ -9,6 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
   --background-color: #19181A;
   --text-color: #F0EBD8;
+  --secondary-text-color: #B7C9E2;
   --text-color-hover: #7FB7FF;
 }
 
@@ -72,11 +73,23 @@ h1 {
 
 /* Hero ----------------------------------------------------------------------------------------------- */
 
-.hero {
+/* .hero {
   min-height: 100vh;
   justify-content: center;
   text-align: center;
   padding: 1rem;
+} */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  text-align: center;
+  margin-top: -10vh;
+  margin-bottom: 10vh;
 }
 
 .hero h1 {
@@ -86,10 +99,11 @@ h1 {
 }
 
 .hero p {
-  color: #B7C9E2;
+  color: var(--secondary-text-color);
   font-weight: 400;
-  font-size: max(0.75rem, 1vw);
   margin-top: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
 /* Experience ----------------------------------------------------------------------------------------- */
@@ -136,7 +150,7 @@ h1 {
 }
 
 .timeline-year {
-  color: #b7c9e2;
+  color: var(--secondary-text-color);
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -146,7 +160,7 @@ h1 {
   border: 1px solid rgba(116, 140, 171, 0.2);
   border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
 }
 
 .timeline-title {
@@ -155,7 +169,7 @@ h1 {
 }
 
 .timeline-employer {
-  color: var(--muted-text-color, #b7c9e2);
+  color: var(--secondary-text-color);
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -243,7 +257,7 @@ h1 {
   border: 1px solid rgba(116, 140, 171, 0.4);
   border-radius: 12px;
   text-decoration: none;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
 }
 
 .resume-btn:hover {
@@ -285,7 +299,7 @@ h1 {
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
 }
 
 .contact-email-link:hover,
@@ -360,7 +374,7 @@ h1 {
   border: 1px solid rgba(116, 140, 171, 0.15);
   padding: 2rem;
   border-radius: 1.5rem;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0 transparent;
 }
@@ -377,6 +391,8 @@ h1 {
   color: var(--text-color);
 }
 
+/* Text ---------------------------------------------------------------------------------------------- */
+
 a,
 button,
 .contact-email-link,
@@ -384,105 +400,77 @@ button,
   transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
-/* Experience & Project Titles */
 .timeline-title,
 .project-info h2 {
   font-size: 1.8rem;
-  /* or 20px */
   font-weight: 500;
 }
 
-/* Employer (slightly smaller than title, but still prominent) */
 .timeline-employer {
   font-size: 1.45rem;
-  /* or 17.6px */
 }
 
-/* Experience bullets & Project descriptions */
 .timeline-desc li,
 .project-desc {
   font-size: 1.2rem;
-  /* or 16px */
   line-height: 1.6;
 }
 
+/* Responsiveness ------------------------------------------------------------------------------------ */
+
 @media (max-width: 768px) {
   .links {
-    margin-top: 1em; /* was 5em */
+    margin-top: 1em;
   }
 
   .resume {
-    margin-top: 2vh; /* was 8vh */
+    margin-top: 2vh;
   }
 
   .hero p {
-    margin-bottom: 0.5em; /* optional, if needed for better spacing */
+    margin-bottom: 0.5em;
   }
-}
 
-
-@media (max-width: 768px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    margin-top: -10vh;
-    margin-bottom: 10vh;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Experience & Project Titles */
   .timeline-title,
   .project-info h2 {
-    font-size: 1.25rem; /* was 1.8rem */
+    font-size: 1.25rem;
   }
 
-  /* Employer text */
   .timeline-employer {
-    font-size: 1rem; /* was 1.45rem */
+    font-size: 1rem;
   }
 
-  /* Bullets & Descriptions */
-  .timeline-desc li,
+  .hero p, .timeline-desc li,
   .project-desc {
-    font-size: 0.8rem; /* was 1.2rem */
+    font-size: 0.8rem;
     line-height: 1.5;
   }
 
-  /* Optional: tighter spacing for project sections on mobile */
   .project-card {
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
 
   h1 {
-    font-size: 2.5rem; /* Adjusted for smaller screens */
-    margin-bottom: -2rem; /* reduced from 2rem */
-
+    font-size: 2.5rem;
+    margin-bottom: -2rem;
   }
-}
 
-@media (max-width: 768px) {
   .resume-btn {
-    padding: 0.6em 1.2em; /* smaller than clamp */
+    padding: 0.6em 1.2em;
     font-size: 1rem;
   }
-}
 
-@media (max-width: 768px) {
   .timeline-line {
     display: none;
   }
 
   .contact-button-wrapper {
     margin-top: 3em;
-
   }
 
   .timeline-box {
-    margin-bottom:-1em;
+    margin-bottom: -1em;
   }
 }
 

@@ -10,10 +10,10 @@ const experiences = [
     start: "May 2025",
     end: "Present",
     description: [
-      "Documented, developed, and maintained a Node.js application for assessing human color differentiation in controlled experiments",
-      "Built and consumed REST APIs to handle experiment configuration, data collection, and results storage in a SQLite database",
-      "Contributed in weekly lab meetings and code reviews, aligning development efforts with broader research objectives and experimental protocols.",
-      "Collaborated with Ph.D. students to iterate on experimental tools, improving usability and reliability across multiple research projects.",
+      "Documented, developed, and maintained a Node.js application for assessing human colour differentiation in controlled experiments",
+      "Built REST APIs to handle experiment configuration, data collection, and results storage in a SQLite database",
+      "Contributed in weekly code reviews to align developmental efforts with broader research objectives",
+      "Collaborated with Ph.D. students to develop experimental software tools supporting data collection, analysis, and visualization in colour vision studies",
     ],
   },
   {
@@ -22,9 +22,9 @@ const experiences = [
     start: "January 2024",
     end: "May 2025",
     description: [
-      "Providing academic support and clarifying course material for students through email and office hours.",
-      "Grading course deliverables, ensuring consistent and fair application of grading rubrics.",
-      "Leading lab sessions to provide hands-on guidance, reinforcing key concepts taught in lectures.",
+      "Providing academic support and clarifying course material for students through email and office hours",
+      "Grading course deliverables, ensuring consistent and fair application of grading rubrics",
+      "Leading lab sessions to provide hands-on guidance, reinforcing key concepts taught in lectures",
     ],
   },
 ];

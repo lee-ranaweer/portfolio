@@ -17,7 +17,6 @@ const techIcons = {
   "API": <FaGoogle />,
   "REST": <FaGoogle />,
   "Unity": <FaUnity />,
-  "C": <SiC />,
   "Python": <SiPython />,
   "Java": <FaJava />,
   "React": <FaReact />,
@@ -54,7 +53,7 @@ const projects = [
   },
   {
     name: "Molecule Visualizer",
-    description: "A fullstack app that converts SDF files of molecular structures into interactive 3D models using a custom-built library. You can upload files to visualize molecules directly in the web browser. Uploaded molecules are saved in a local database for easy management",
+    description: "A fullstack app that converts SDF files of molecular structures into interactive 3D models using a custom-built library. You can upload files to visualize molecules directly in the web browser. Uploaded molecules are saved in a local database for easy management.",
     tech: ["C", "Python", "SQLite", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/lee-ranaweer/molecule-visualizer"
   },
@@ -66,7 +65,7 @@ const projects = [
   },
   {
     name: "Slashimi",
-    description: "A Unity fishing game demo featuring slashing mechanics inspired by Metal Gear Solid. Players explore a custom island with scenic fishing spots and a variety of fish differing in value, rarity, and difficulty. After catching a fish, players can slash it to collect. This demo currently includes small missions and is planned for future expansion.",
+    description: "A Unity fishing game demo featuring slashing mechanics inspired by Metal Gear Solid. Players explore a custom rendered island with a variety of fish differing in value, rarity, and difficulty. The demo features expressive player animations, dynamic facial expressions, ambient sound effects, and engaging fishing minigames.",
     tech: ["Unity", "C#", "Blender"],
     github: "https://github.com/lee-ranaweer/slashimi"
   }
