@@ -13,7 +13,7 @@ const experiences = [
       "Documented, developed, and maintained a Node.js application for assessing human colour differentiation in controlled experiments",
       "Built REST APIs to handle experiment configuration, data collection, and results storage in a SQLite database",
       "Contributed in weekly code reviews to align developmental efforts with broader research objectives",
-      "Collaborated with Ph.D. students to develop experimental software tools supporting data collection, analysis, and visualization in colour vision studies",
+      "Collaborated with researechers to develop experimental software tools supporting data collection, analysis, and visualization in colour vision studies",
     ],
   },
   {
