@@ -31,7 +31,7 @@ const techIcons = {
   "Springboot": <SiSpring />,
   "MySQL": <SiMysql />,
   "Blender": <SiBlender />,
-  "Scikit learn": <SiScikitlearn />,
+  "Scikit Learn": <SiScikitlearn />,
   "AWS": <SiAwsamplify />,
   "Docker": <SiDocker />,
   "Android": <FaAndroid />,
@@ -60,7 +60,7 @@ const projects = [
   {
     name: "Battlesnake Machine Learning",
     description: "A machine learning project that replicates the behavior of a top-performing Battlesnake by training models such as SVMs, Decision Trees, and Neural Networks on gameplay data. The goal was to compare these training methods in mimicking strategic decision-making. The final model achieved a 90% accuracy in replicating the original models behaviour.",
-    tech: ["Python", "Scikit learn", "AWS"],
+    tech: ["Python", "Scikit Learn", "AWS"],
     github: "https://github.com/lee-ranaweer/battlesnake-machine-learning"
   },
   {
