@@ -46,11 +46,11 @@ const Contact = () => {
         <h1>Let's Connect</h1>
         <div className="contact-button-wrapper">
           <a
-            href="mailto:lee.ranaweer@gmail.com"
+            href="mailto:nelith.ranaweer@gmail.com"
             className="contact-email-link"
           >
             <FaEnvelope style={{ marginRight: "0.5rem" }} />
-            lee.ranaweer@gmail.com
+            nelith.ranaweer@gmail.com
           </a>
         </div>
       </div>

@@ -8,7 +8,7 @@ const experiences = [
     title: "Undergraduate Research Assistant",
     employer: "University of Guelph – SVI Lab",
     start: "May 2025",
-    end: "Present",
+    end: "August 2025",
     description: [
       "Documented, developed, and maintained a Node.js application for assessing human colour differentiation in controlled experiments",
       "Built REST APIs to handle experiment configuration, data collection, and results storage in a SQLite database",
